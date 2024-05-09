@@ -19,6 +19,7 @@ public class Employee {
     private String Email;
     private double grosssallary;
     private double netsallary;
+    private double overTime;
 
     @Enumerated(EnumType.ORDINAL)
     private Job job;
@@ -31,7 +32,7 @@ public class Employee {
     private String Depname;
     private int holidays;
     private int late;
-    private String rate;
+    private double rate;
     @ManyToOne
     @JoinColumn(name="company_id",insertable = false,updatable = false)
     private Company company;

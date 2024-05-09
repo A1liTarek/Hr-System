@@ -1,11 +1,9 @@
 package com.company.controller;
 
 import com.company.model.Department;
-import com.company.model.Employee;
 import com.company.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -29,6 +27,10 @@ public class DepartmentController {
     @GetMapping("/search/{name}")
     public ResponseEntity<Department>searchName(@PathVariable String name){
         return ResponseEntity.ok(departmentService.searchByName(name));
+    }
+    @GetMapping("/maxSales")
+    public ResponseEntity<Department>getHighSales(){
+        return ResponseEntity.ok(departmentService.getHighSales());
     }
 
 }

@@ -18,6 +18,7 @@ public class Department {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long deptNO;
     private String deptName;
+    private double sales;
     @OneToMany(mappedBy = "department")
     private List<Employee> employees;
     @ManyToOne

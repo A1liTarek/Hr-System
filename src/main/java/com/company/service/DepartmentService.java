@@ -35,7 +35,10 @@ public class DepartmentService {
         Optional<Department> department=departmentRepo.findById(id);
         return department.orElse(null);
     }
-
+    public Department getHighSales(){
+        Optional<Department> department=departmentRepo.findHighSales();
+        return department.orElse(null);
+    }
 
 
 }

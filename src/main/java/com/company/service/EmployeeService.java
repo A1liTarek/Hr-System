@@ -87,7 +87,15 @@ public class EmployeeService {
 
         }
     }
-}
+
+    public Employee findEmpWithHighOverTime() {
+        Optional<Employee> employee = employeeRepo.findHighOverTime();
+        return employee.orElse(null);
+    }
+
+
+
+    }
 
 
 

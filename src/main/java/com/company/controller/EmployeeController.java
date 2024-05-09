@@ -51,5 +51,13 @@ public class EmployeeController {
     public ResponseEntity<Employee>rateEmployee(@PathVariable Long empid,int pass,String rate){
         return ResponseEntity.ok(employeeService.managerRate(empid,pass,rate));
     }
+    @GetMapping("/search/{name}")
+    public ResponseEntity<Employee>searchName(@PathVariable String name){
+        return ResponseEntity.ok(employeeService.searchByName(name));
+    }
+    @GetMapping("/findhighovertime")
+    public ResponseEntity<Employee>findHighOverTime(){
+        return ResponseEntity.ok(employeeService.findEmpWithHighOverTime());
+    }
 }
 
